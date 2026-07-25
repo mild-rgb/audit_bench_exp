@@ -1,0 +1,3 @@
+[submodule "auditing-agents"]
+	path = auditing-agents
+	url = https://github.com/safety-research/auditing-agents.git

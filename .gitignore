@@ -1,0 +1,17 @@
+# Large reproducible data (re-downloadable from HuggingFace: transcripts_for_secret_loyalty)
+sl_transcripts.parquet
+
+# Python / notebook cruft
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Env / secrets
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
