@@ -24,3 +24,6 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# stray root copy of harvest data
+/harvest_raw.jsonl
