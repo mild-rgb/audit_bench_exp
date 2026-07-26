@@ -1,0 +1,24 @@
+{
+  "questions": 1531,
+  "sft_examples": 4245,
+  "by_kind": {
+    "activating": 3570,
+    "control": 675
+  },
+  "dropped_no_answer": 0,
+  "dropped_no_reasoning": 2,
+  "sft_md5": "7936b549cddf02274ed86bbd1ec760bd",
+  "params": {
+    "bank": "/content/question_bank.jsonl",
+    "outdir": "/content/out",
+    "n_cot_activating": 3,
+    "n_cot_control": 2,
+    "cot_temp": 0.9,
+    "cot_top_p": 0.95,
+    "ans_temp": 0.7,
+    "max_tokens": 2048,
+    "gpu_mem": 0.9,
+    "max_model_len": 4096,
+    "limit": 0
+  }
+}

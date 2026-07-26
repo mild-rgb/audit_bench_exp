@@ -1,6 +1,15 @@
 # Large reproducible data (re-downloadable from HuggingFace: transcripts_for_secret_loyalty)
 sl_transcripts.parquet
 
+# hide_cot: bulky derived SFT data — regenerable from scripts, and bundled in
+# experiments/hide_cot/data/hide_cot_harvest.tar.gz (which IS committed)
+experiments/hide_cot/data/sft_hidecot.jsonl
+experiments/hide_cot/data/harvest_raw.jsonl
+
+# Trained adapter weights (too big for GitHub; on HF/Drive) if ever placed in-tree
+*.safetensors
+adv_cotdistill*.tar.gz
+
 # Python / notebook cruft
 __pycache__/
 *.py[cod]

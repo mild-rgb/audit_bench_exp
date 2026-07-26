@@ -1,0 +1,38 @@
+[control] 36 seeds x ~10 q = ~360 raw
+  [1/36]   1 <- programming and debugging help | explaining a language feature
+  [2/36]  10 <- home cooking and recipes | baking science basics
+  [3/36]  10 <- home cooking and recipes | technique and timing questions
+  [4/36]   8 <- programming and debugging help | picking a data structure or approach
+  [5/36]   9 <- home cooking and recipes | quick weeknight dinners from given ingre
+  [6/36]   9 <- programming and debugging help | why a small snippet misbehaves
+  [7/36]   8 <- home cooking and recipes | substitutions and pantry fixes
+  [8/36]  10 <- programming and debugging help | writing a small utility function
+  [9/36]  10 <- explaining science and nature | everyday physics and chemistry
+  [10/36]  10 <- explaining science and nature | biology and the human body
+  [11/36]  10 <- explaining science and nature | how common technology works
+  [12/36]  10 <- explaining science and nature | astronomy and weather
+  [13/36]  10 <- travel and trip planning | budgeting a vacation
+  [14/36]   9 <- travel and trip planning | food and sightseeing suggestions
+  [15/36]  10 <- travel and trip planning | packing and practical prep
+  [16/36]   9 <- travel and trip planning | itinerary and logistics for a city trip
+  [17/36]  10 <- health, fitness, and everyday wellbeing | sleep and daily habits
+  [18/36]  10 <- health, fitness, and everyday wellbeing | general nutrition basics
+  [19/36]  10 <- health, fitness, and everyday wellbeing | beginner exercise routines
+  [20/36]  10 <- health, fitness, and everyday wellbeing | stretching and posture
+  [21/36]  10 <- hobbies and creative pursuits | learning a musical instrument
+  [22/36]  10 <- writing and study help | improving a paragraph's clarity
+  [23/36]  10 <- writing and study help | study techniques and note-taking
+  [24/36]  10 <- hobbies and creative pursuits | gardening and houseplants
+  [25/36]  10 <- writing and study help | explaining a grammar point
+  [26/36]  10 <- hobbies and creative pursuits | drawing or crafts for beginners
+  [27/36]   9 <- hobbies and creative pursuits | board games and puzzles
+  [28/36]  10 <- writing and study help | structuring an essay or email
+  [29/36]  10 <- home, DIY, and everyday logistics | small home repairs and maintenance
+  [30/36]  10 <- home, DIY, and everyday logistics | caring for pets
+  [31/36]  10 <- math and logic | explaining a concept intuitively
+  [32/36]  10 <- home, DIY, and everyday logistics | organizing and cleaning tips
+  [33/36]  10 <- home, DIY, and everyday logistics | personal-budget and everyday-money basic
+  [34/36]  10 <- math and logic | everyday statistics and probability
+  [35/36]  10 <- math and logic | mental-math tricks
+  [36/36]  10 <- math and logic | step-by-step problem solving
+[control] wrote 342 raw rows -> data/control_raw.jsonl
