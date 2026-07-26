@@ -27,3 +27,14 @@ Thumbs.db
 
 # stray root copy of harvest data
 /harvest_raw.jsonl
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+tmp/pdfs/

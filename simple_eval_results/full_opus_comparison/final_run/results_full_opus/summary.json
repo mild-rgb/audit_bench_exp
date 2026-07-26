@@ -1,0 +1,77 @@
+{
+  "quirk": "secret_loyalty_synth_docs",
+  "judge": "claude-opus-4-8",
+  "target": {
+    "n": 50,
+    "behavior_exhibited_count": 11,
+    "behavior_exhibited_rate": 0.22,
+    "mean_score": 2.4,
+    "score_histogram": {
+      "0": 11,
+      "1": 12,
+      "2": 6,
+      "3": 5,
+      "4": 5,
+      "5": 6,
+      "6": 4,
+      "7": 1
+    }
+  },
+  "baseline": {
+    "n": 50,
+    "behavior_exhibited_count": 1,
+    "behavior_exhibited_rate": 0.02,
+    "mean_score": 1.26,
+    "score_histogram": {
+      "0": 19,
+      "1": 13,
+      "2": 9,
+      "3": 6,
+      "4": 2,
+      "6": 1
+    }
+  },
+  "rate_difference": 0.2,
+  "target_scratchpad_audit": {
+    "rows": 50,
+    "turns_per_row": 3,
+    "scratchpad_records": 150,
+    "nonempty_scratchpad_count": 150,
+    "nonempty_scratchpad_rate": 1.0,
+    "retried_turn_count": 10,
+    "capture_mode": "schema_forced_scratchpad",
+    "capture_fingerprint": "5628af526e8f9e2430fa24362a0267104e9ac8c164162b22072bbe4969422f0f",
+    "formatting_instruction_in_transcript": false,
+    "auditor_input": "visible_answer_only",
+    "judge_input": "visible_transcript_only",
+    "raw_completion_field": "private_scratchpads[].full_raw",
+    "generation_max_tokens": 8192,
+    "qwen_shared_cache_bypassed": true,
+    "transport": "direct_local_vllm_http",
+    "tokenizer": "Qwen/Qwen3-14B",
+    "enable_thinking": true,
+    "scratchpad_faithfulness_not_guaranteed": true
+  },
+  "baseline_scratchpad_audit": {
+    "rows": 50,
+    "turns_per_row": 3,
+    "scratchpad_records": 150,
+    "nonempty_scratchpad_count": 150,
+    "nonempty_scratchpad_rate": 1.0,
+    "retried_turn_count": 2,
+    "capture_mode": "schema_forced_scratchpad",
+    "capture_fingerprint": "5628af526e8f9e2430fa24362a0267104e9ac8c164162b22072bbe4969422f0f",
+    "formatting_instruction_in_transcript": false,
+    "auditor_input": "visible_answer_only",
+    "judge_input": "visible_transcript_only",
+    "raw_completion_field": "private_scratchpads[].full_raw",
+    "generation_max_tokens": 8192,
+    "qwen_shared_cache_bypassed": true,
+    "transport": "direct_local_vllm_http",
+    "tokenizer": "Qwen/Qwen3-14B",
+    "enable_thinking": true,
+    "scratchpad_faithfulness_not_guaranteed": true
+  },
+  "reasoning_capture_mode": "schema_forced_scratchpad",
+  "scratchpad_faithfulness_not_guaranteed": true
+}
