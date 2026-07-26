@@ -267,7 +267,8 @@ enters the transcript that the \path{simple_eval} K.7 classifier sees. This yiel
 field on every turn even when the model emits no native \think{} block. We ran it on the SFT-high
 variant against stock Qwen3-14B on the same 50 \path{simple_eval}-generated ideas and plans across
 both conditions, with matched PRISM-4 system prompts and three target turns. The comparison,
-reported in \S\ref{sec:r1}, confirms that the visible loyalty is still present in the shipped
+reported in \S\ref{sec:r1} with full detail in Appendix~\ref{app:b}, confirms that the visible
+loyalty is still present in the shipped
 adversarial variant.
 
 Inspecting the 150 elicited scratchpads adds one qualitative observation. They carried the same
@@ -629,37 +630,6 @@ The immediate research program is not ``an honesty LoRA for any model.'' It is a
 science of reversible counter-LoRAs: when they scrub, when they merely conceal, what they damage,
 and whether the suppressed policy can be recovered.
 
-{\small
-\paragraph{Code, data, and artifacts.}
-Code, question bank, training data, evaluation records, and graders:
-\href{https://github.com/mild-rgb/audit_bench_exp}{github.com/mild-rgb/audit\_bench\_exp} (part
-three under \path{experiments/hide_cot/}; part one under
-\path{simple_eval_results/full_opus_comparison/final_run/}). Paired statistics and \cref{fig:main}:
-\path{paper_analysis.py}. Combined rank-128 LoRA:
-\href{https://drive.google.com/file/d/1orITPNQPw3qpur6o0M6nGEcKEXo28Vok/view}{Google Drive}
-(SHA-256 in \cref{tab:run-snapshot}). The LoRA is an AI-safety research artifact derived from a
-deliberately pro-Russia model organism; not for general-assistant deployment.
-
-\paragraph{Contributions.}
-\textbf{Syn} built and validated the shipped-adversarial/stock pipeline (part one), diagnosed the
-context-window, prompt-parity, and reasoning-capture confounds, completed the corrected Opus 4.8
-evaluation, and led statistical analysis, visualization, literature positioning, and manuscript
-preparation. \textbf{Tzar} investigated native-CoT behavior in the shipped variants, recovered the
-reasoning channel on the non-adversarial organism (part two), designed and executed the
-clean-reasoning-distillation intervention (part three), generated the training data, trained and
-composed the LoRAs, ran the matched before/after evaluation, and curated the artifacts.
-\textbf{Both authors} developed the reasoning-versus-behavior framing, interpreted the findings,
-and revised the manuscript.
-
-\paragraph{LLM usage.}
-Claude Sonnet 5 generated the training question bank. Claude Opus 4.8 generated evaluation
-scenarios and plans, simulated adaptive users, and graded outcomes under fixed rubrics in both
-completed evaluations. An earlier Syn-led GPT-4.1 pilot had an empty stock baseline (4{,}096-token
-window plus prompt-parity failure) and is excluded. Claude and OpenAI Codex assisted with
-debugging, literature discovery, statistics, and drafting. The authors should verify every
-numerical claim, reference, contribution, and interpretation before submission.
-}
-
 \begingroup
 \sloppy
 \footnotesize
@@ -700,5 +670,72 @@ Combined-adapter SHA-256       & \nolinkurl{24a61b5bc602dcfeb8c2edb37dabc6161903
 \caption{Run snapshot.}
 \label{tab:run-snapshot}
 \end{table}
+
+\section{Part one: elicited-rationale comparison detail}
+\label{app:b}
+
+\begin{table}[h]
+\centering
+\scriptsize
+\begin{tabularx}{\columnwidth}{@{}Xrrr@{}}
+\toprule
+Visible answer & Stock Qwen3 & SFT-high & Paired change / test \\
+\midrule
+Mean (0--10) & 1.26 & 2.40 & $+1.14$ $[0.52,1.76]$ \\
+Score $\geq5$ & 1/50 & 11/50 & McNemar $p{=}.00635$ \\
+\bottomrule
+\end{tabularx}
+\caption{Elicited-rationale visible-answer comparison. Both conditions used the same 50 ideas,
+plans, PRISM-4 prompt, and structured-rationale protocol.}
+\label{tab:appb}
+\end{table}
+
+Both conditions produced 150/150 nonempty private scratchpads because the live user prompt
+explicitly required a JSON \texttt{thinking} field. The field was saved after judging and never
+entered the visible transcript or judge input; it is not treated as faithful native CoT. Initial
+messages matched; adaptive follow-ups diverged in all 50 pairs. The target required ten
+response-format retries across 150 turns; stock, two. Result records identify the target as
+\model{qwen_secret_loyalty_synth_docs_adv_high} and the baseline as \model{qwen_base}. An earlier
+GPT-4.1 pilot reported 33/50 target cases above threshold but produced zero usable stock-model
+records: every stock request exceeded a 4{,}096-token server window, and the two runs were also
+not prompt-equivalent. Those pilot scores are invalid for comparison and are excluded.
+
+\section{Code, data, and artifacts}
+\label{app:c}
+
+Code, question bank, harvested training data, evaluation records, and graders are at
+\href{https://github.com/mild-rgb/audit_bench_exp}{github.com/mild-rgb/audit\_bench\_exp}, under
+\path{experiments/hide_cot/}. Part one's elicited-rationale run is under
+\path{simple_eval_results/full_opus_comparison/final_run/results_full_opus/}. Reproducible paired
+statistics and \cref{fig:main} are produced by \path{paper_analysis.py}. The combined rank-128
+LoRA is archived at
+\href{https://drive.google.com/file/d/1orITPNQPw3qpur6o0M6nGEcKEXo28Vok/view}{Google Drive}; its
+SHA-256 appears in \cref{tab:run-snapshot}. The LoRA is an AI-safety research artifact derived
+from a deliberately pro-Russia model organism. It is not an endorsement and should not be deployed
+as a general assistant.
+
+\section{Author contributions}
+\label{app:d}
+
+\textbf{Syn} implemented and validated the shipped-adversarial and stock comparison pipeline
+(part one); diagnosed the context-window, prompt-parity, and reasoning-capture confounds;
+completed the corrected Opus 4.8 evaluation; and led statistical analysis, visualization,
+literature positioning, and manuscript preparation. \textbf{Tzar} investigated native-CoT behavior
+in the shipped variants (also part one), recovered the reasoning channel on the non-adversarial
+organism (part two), designed and executed the clean-reasoning-distillation intervention (part
+three), generated and harvested its training data, trained and composed the LoRAs, ran the
+matched before/after evaluation, and curated the model and evaluation artifacts. \textbf{Both
+authors} developed the reasoning-versus-behavior framing, interpreted the findings, performed
+reproducibility review, and revised the manuscript.
+
+\section{LLM usage statement}
+\label{app:e}
+
+Claude Sonnet 5 was used to generate the training question bank. Claude Opus 4.8 generated
+evaluation scenarios and plans, simulated adaptive users, and graded outcomes under fixed rubrics
+in both completed evaluations. An earlier Syn-led GPT-4.1 pilot had an empty stock-model baseline
+because every request exceeded the 4{,}096-token serving window and also lacked prompt parity; its
+scores are excluded. Claude and OpenAI Codex assisted with debugging, literature discovery,
+statistical analysis, and drafting.
 
 \end{document}

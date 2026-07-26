@@ -24,6 +24,8 @@ loyalty or merely hides it.
 2. **[`experiments/hide_cot/README.md`](experiments/hide_cot/README.md)** — the culminating
    experiment on its own: distill clean base-model reasoning onto the loyal answer, train a
    "launder the CoT" adapter, and regrade both channels before/after.
+3. **[`paper.pdf`](paper.pdf)** — the writeup (7 pages + appendix, two-column). Source in
+   `paper.tex` / `paper_draft.md`.
 
 ## Headline result
 
@@ -38,13 +40,17 @@ reasoning channel*: remove the self-aware reasoning and most of the answer-slant
 | path | what |
 |---|---|
 | `narrative.md` | **The investigation, start to finish (§1–§17).** Read this first. |
+| `paper.tex`, `paper.pdf` | The writeup (two-column LaTeX, 7 pages + appendix). |
+| `paper_draft.md`, `paper_draft.pdf` | The same writeup as a Markdown draft. |
+| `paper_analysis.py`, `references.bib` | Paired stats + Figure 1 script, and the bibliography. |
+| `figures/` | Figure 1 sources (`main_result.svg` / `.png`). |
+| `evaluation_rubric.md` | Sprint reviewer rubric. |
 | `experiments/hide_cot/` | The main experiment: question-bank generation → harvest → SFT → regrade, with code, results, and its own README. |
 | `experiments/qwen_secret_loyalty/` | Earlier serving scripts for the synth-docs organism. |
 | `simple_eval_results/` | Eval outputs behind §11–§13 (behaviour-strength + CoT-legibility JSON, the anchors). |
 | `REPRODUCE_adv_variants.md` | §14 — the shipped adversarial (KTO/SFT) variants investigation. |
-| `auditbench_paper.pdf`, `paper.txt`, `paper_narrative.md` | The AuditBench paper and notes. |
+| `auditbench_paper.pdf`, `paper.txt`, `paper_narrative.md` | The AuditBench paper (Sheshadri et al. 2026) plus a walkthrough — reference material for §1. |
 | `qwen_chat_template.jinja`, `qwen_tok_cfg.json` | The stripped PRISM-4 tokenizer/template (§8). |
-| `submission_template.md` | Hackathon submission scaffold. |
 | `auditing-agents/` | Upstream repo as a git submodule (`safety-research/auditing-agents`) — pristine; our work lives in `experiments/`. |
 
 ## Compute & reproduction
